@@ -1,0 +1,128 @@
+.payment-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.payment-back-btn {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.payment-back-btn:hover {
+    background-color: #e64a19;
+}
+
+.payment-two-columns {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Left side */
+.payment-form {
+    flex: 1;
+    min-width: 300px;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form h3 {
+    color: #1b1b83;
+    margin-bottom: 1.5rem;
+}
+
+.payment-form label {
+    display: block;
+    margin: 1rem 0 0.4rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Right side */
+.payment-recap {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.payment-recap h2 {
+    color: #ff5722;
+    margin-bottom: 1.5rem;
+}
+
+.payment-event-details h3 {
+    color: #1b1b83;
+    margin-bottom: 0.5rem;
+}
+
+.payment-event-details p {
+    margin: 0.5rem 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.payment-description {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #555;
+}
+
+.payment-remaining {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.payment-remaining svg {
+    margin-right: 10px;
+}
+
+.confirm-payment-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #1b1b83;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.confirm-payment-btn:hover {
+    background-color: #0f0f6a;
+}
+
+.loading,
+.error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: #666;
+}

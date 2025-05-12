@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"    # AMQP protocol
+      - "15672:15672"  # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      - mailer-network
+
+  mailer-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mailer-service
+    # depends_on:
+    #   - rabbitmq
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    networks:
+      - mailer-network
+
+networks:
+  mailer-network:
+    driver: bridge

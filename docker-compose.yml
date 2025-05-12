@@ -1,0 +1,99 @@
+version: '3.8'
+
+services:
+  # Service PostgreSQL
+  postgres:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db-init:/docker-entrypoint-initdb.d
+    networks:
+      - mailer-network
+
+  # Service FastAPI
+  fastapi_app:
+    build:
+      context: ./ticketing_api
+      dockerfile: Dockerfile
+    container_name: fastapi_app
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      RABBITMQ_URL: ${RABBITMQ_URL}
+    depends_on:
+      - postgres
+      - rabbitmq
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ticketing_api:/app
+    networks:
+      - mailer-network
+
+  # Service RabbitMQ
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"    # AMQP protocol
+      - "15672:15672"  # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      - mailer-network
+
+  # Service Mailer
+  mailer-service:
+    build:
+      context: ./mailer-service
+      dockerfile: Dockerfile
+    container_name: mailer-service
+    env_file:
+      - .env
+    environment:
+      RABBITMQ_URL: ${RABBITMQ_URL}
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ./mailer-service:/app
+    networks:
+      - mailer-network
+
+  # # Service Front-end React
+  # front:
+  #   build:
+  #     context: ./ticketing_front
+  #     dockerfile: Dockerfile
+  #   container_name: front
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     REACT_APP_API_URL: ${REACT_APP_API_URL}
+  #   depends_on:
+  #     - fastapi_app
+  #   ports:
+  #     - "3000:80"  # Mappe le port 80 du conteneur au port 3000 de l'hôte
+  #   volumes:
+  #     - ./ticketing_front:/app
+  #   networks:
+  #     - mailer-network
+
+volumes:
+  postgres_data:
+
+networks:
+  mailer-network:
+    driver: bridge

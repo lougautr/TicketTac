@@ -1,0 +1,135 @@
+.event-details-back-btn {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    background: #ff5722;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    width: 145px;
+}
+
+.event-details-back-btn:hover {
+    background: #e64a19;
+}
+
+.event-details-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.event-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #ff5722;
+}
+
+.event-details-meta {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.event-details-meta svg {
+    margin-right: 0.5rem;
+    color: #333;
+}
+
+.event-details-description {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    color: #333;
+    line-height: 1.5;
+}
+
+.event-details-ticket-info {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.event-details-ticket-info p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.event-details-remaining-tickets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-details-remaining-tickets svg {
+    margin-right: 0.5rem;
+}
+
+.event-details-ticket-progress-bar {
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 16px;
+    margin: 0.5rem auto;
+    width: 100%;
+    max-width: 400px;
+}
+
+.event-details-ticket-progress-bar .filled {
+    height: 100%;
+    background: linear-gradient(to right, #ff9800, #ff5722);
+}
+
+.event-details-progress-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.event-details-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.event-details-buy-ticket-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background: #1b1b83;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.event-details-buy-ticket-btn:hover {
+    background: #0f0f6a;
+}
+
+.loading,
+.error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: #666;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ .Release.Name }}-front-hpa
+  namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ .Release.Name }}-front
+  minReplicas: {{ .Values.front.minReplicas | default 2 }}
+  maxReplicas: {{ .Values.front.maxReplicas | default 10 }}
+  targetCPUUtilizationPercentage: {{ .Values.front.targetCPUUtilizationPercentage | default 50 }}

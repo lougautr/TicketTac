@@ -1,0 +1,139 @@
+.profile-tickets-content {
+    padding: 3rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 58vh;
+}
+
+.profile-tickets-content h2 {
+    font-size: 2rem;
+    color: #1b1b83;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.profile-tickets-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* max 2 par ligne */
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.profile-tickets-ticket-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+    border-left: 6px solid #ff5722;
+}
+
+.profile-tickets-ticket-card:hover {
+    transform: translateY(-4px);
+}
+
+.profile-tickets-ticket-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: #ff5722;
+}
+
+.profile-tickets-ticket-card p {
+    font-size: 0.95rem;
+    color: #333;
+    margin: 0.4rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.profile-tickets-ticket-card svg {
+    margin-right: 0.5rem;
+    color: #1b1b83;
+}
+
+.profile-tickets-ticket-card svg:hover {
+    color: #0f0f47;
+}
+
+.profile-tickets-error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+
+.profile-tickets-ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-tickets-delete-ticket-icon {
+    color: #ff4d4f;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+
+.profile-tickets-delete-ticket-icon:hover {
+    color: #d9363e;
+}
+
+/* Modal styles */
+.profile-tickets-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.profile-tickets-modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.profile-tickets-modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+
+.profile-tickets-cancel-button,
+.profile-tickets-save-button {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile-tickets-cancel-button {
+    background-color: #eee;
+    color: #333;
+}
+
+.profile-tickets-cancel-button:hover {
+    background-color: #dadada;
+    color: #333;
+}
+
+.profile-tickets-save-button {
+    background-color: #ff4d4f;
+    color: white;
+}
+
+.profile-tickets-save-button:hover {
+    background-color: #c93e41;
+    color: white;
+}

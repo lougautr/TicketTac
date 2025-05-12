@@ -1,0 +1,63 @@
+.event-card {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    margin: 1rem;
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-title {
+    color: #FF6B00;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-date {
+    font-weight: 500;
+    color: #1A1A2E;
+    margin-bottom: 0.5rem;
+}
+
+.event-location {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.event-description {
+    color: #333;
+    margin-bottom: 1.2rem;
+}
+
+.event-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.progress-bar {
+    background-color: #eee;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-filled {
+    height: 100%;
+    background-color: #FF6B00;
+    transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+    font-size: 0.85rem;
+    color: #777;
+}

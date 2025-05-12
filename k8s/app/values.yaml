@@ -1,0 +1,79 @@
+api:
+  image:
+    repository: gabrielti/4webd
+    tag: latest
+  replicaCount: 2
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 256Mi
+
+mailer:
+  image:
+    repository: gabrielti/4webdmailer
+    tag: latest
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 300m
+      memory: 256Mi
+    requests:
+      cpu: 150m
+      memory: 128Mi
+
+rabbitmq:
+  image:
+    repository: rabbitmq
+    tag: 3-management
+  auth:
+    username: guest
+    password: guest
+  service:
+    amqpPort: 5672
+    managementPort: 15672
+
+postgres:
+  image:
+    repository: postgres
+    tag: "15"
+  auth:
+    username: pgsql_webd
+    password: pgsql_webd
+    database: webd
+  storage:
+    size: 1Gi
+  config:
+    max_connections: 100
+    shared_buffers: 128MB
+  service:
+    port: 5432
+
+database:
+  host: "{{ .Release.Name }}-postgres"
+  port: 5432
+
+front:
+  image:
+    repository: gabrielti/4webdfront
+    tag: latest
+  replicaCount: 2
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 256Mi
+  service:
+    type: LoadBalancer
+    port: 80
+  apiUrl: "http://{{ .Release.Name }}-fastapi-service"
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+
+global:
+  environment: development

@@ -1,0 +1,208 @@
+.admin-users {
+    text-align: center;
+}
+
+.admin-users-content {
+    min-height: 72vh;
+}
+
+.admin-users .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    margin: 20px;
+    color: #666;
+}
+
+.admin-users .breadcrumb-link {
+    text-decoration: none;
+    color: #0052cc;
+    font-weight: 500;
+}
+
+.admin-users .breadcrumb-link:hover {
+    text-decoration: underline;
+}
+
+.admin-users .breadcrumb-icon {
+    font-size: 14px;
+    color: #666;
+}
+
+.admin-users .breadcrumb-current {
+    font-weight: bold;
+    color: #333;
+}
+
+.admin-users-create-button {
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+}
+
+.admin-users-create-button button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #28a745; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.admin-users-create-button button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.admin-users-create-button button:active {
+    background-color: #1e7e34;
+    transform: scale(0.98);
+}
+
+.admin-users-create-button button svg {
+    font-size: 18px;
+}
+
+.admin-users-table-container {
+    margin: 20px;
+}
+
+.admin-users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-users-table th, .admin-users-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.admin-users-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.admin-users-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.admin-users-table tr:hover {
+    background-color: #ddd;
+}
+
+.admin-users-action-icon {
+    cursor: pointer;
+    margin: 0 8px;
+    font-size: 18px;
+}
+
+.admin-users-edit-icon {
+    color: #007bff;
+}
+
+.admin-users-delete-icon {
+    color: #dc3545;
+}
+
+.admin-users-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.admin-users-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-users-modal-content h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.admin-users-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-users-modal-form label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+}
+
+.admin-users-modal-form input,
+.admin-users-modal-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.admin-users-modal-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 100px;
+    resize: vertical;
+    font-family: inherit; 
+    line-height: 1.5;
+}
+
+.admin-users-modal-checkbox {
+    display: flex;
+    gap: 20px;
+}
+
+.admin-users-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.admin-users-modal-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.admin-users-modal-buttons .save-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.admin-users-modal-buttons .cancel-button {
+    background-color: #9d0000;
+    color: white;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
