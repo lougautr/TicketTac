@@ -1,16 +1,47 @@
-# 4WEBD
+# TicketTac - Concert Ticketing System
+A scalable SaaS platform designed to handle concert and event ticket management for organizations of all sizes, from small local events to international tours.
 
-This project is composed of multiples services : 
-- Mailer
-- RabbitMQ
-- FastAPI
-- React
-- PostgreSQL
+## Overview
+This microservice-based system provides complete event management, user authentication, and ticket purchasing capabilities with robust error handling and logging. Designed for high performance and reliability, the system ensures secure transactions and proper user notifications.
 
-In order to start the differents applications from a production point of view. Please take a look at the README.md from the k8s folder :)
+## Features
 
-Also, it is possible to run all services from docker in a developement environement : ```docker compose up --build -d```
+- #### Event Management
+  - Create, retrieve, update, and delete events
+  - Set event capacities and prevent overselling
+  - Manage event details, locations, dates, and pricing tiers
 
-All images are visible from [Docker registry](https://hub.docker.com/u/gabrielti)
+- #### User Management
+  - User registration and profile management
+  - Role-based access control (Admin, EventCreator, Operator, User)
+  - Secure password storage and authentication
 
-Please note that you need to create .env from the .env-example with the correct values (that are already put in there hum hum)
+
+- #### Ticket Purchasing
+  - Secure payment processing
+  - Automated ticket generation
+  - Asynchronous email/SMS confirmations
+  - Ticket verification and validation
+
+## Architecture
+The system is built using a microservices architecture with the following components:
+- FastAPI Backend: RESTful API services for core business logic
+- React Frontend: Responsive user interface
+- PostgreSQL: Primary database for persistent storage
+- RabbitMQ: Message queue for asynchronous processing
+- Mailer Service: Handles email notifications
+- Redis: Caching layer
+- Load Balancer: Traffic distribution for high availability
+
+## Tech Stack
+- Backend: FastAPI (Python)
+- Frontend: React.js
+- Database: PostgreSQL
+- Message Queue: RabbitMQ
+- Containerization: Docker
+- Orchestration: Kubernetes
+- Authentication: JWT
+
+# Contributors
+- Lou-Anne Gautherie
+- Gabriel Titeux 
